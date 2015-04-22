@@ -1,11 +1,22 @@
-mvn-jar-deployer
-================
+xacmlclient
+===========
 
-A tool to point and install set of maven compiled jars into local maven repository.
+A command line client to invoke entitlement service of a WSO2 Identity Server.
 
 Usage
 =====
 
-Following command will install all maven compiled jars in /home/ruchira/wso2store-1.0.0 directory, into your local maven repository pointed by --repo.
+`java -jar lib/xacmlclient-1.0-SNAPSHOT-jar-with-dependencies.jar -request ~/Desktop/trion/xacml/1/request.xml -trustStore /Users/ruchira/binaries/wso2/products/is/wso2is-5.0.0/repository/resources/security/wso2carbon.jks -trustStorePass wso2carbon -verbose`
 
-java -jar mvn-jar-deployer-1.0-SNAPSHOT.jar --path /home/ruchira/wso2store-1.0.0 --repo /home/ruchira/.m2/repository
+usage: ant
+ -help                   prints this message
+ -password <arg>         password of the user who accesses the entitlement
+                         service
+ -request <arg>          path of the entitlement request
+ -server <arg>           server url where entitlement service is running
+ -trustStore <arg>       Java key store with trusted ssl certificates of
+                         the server
+ -trustStorePass <arg>   Password of the key store specified with
+                         trustStore option
+ -username <arg>         user who accesses the entitlement service
+ -verbose                runs on verbose mode
