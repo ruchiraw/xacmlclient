@@ -16,11 +16,13 @@ import org.wso2.carbon.identity.entitlement.stub.EntitlementServiceException;
 import org.wso2.carbon.identity.entitlement.stub.EntitlementServiceStub;
 
 import javax.xml.namespace.QName;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.rmi.RemoteException;
+import java.util.Scanner;
 
 public class Client {
 
@@ -148,8 +150,8 @@ public class Client {
     }
 
     private static String getRequest(String path) throws IOException {
-        byte[] request = Files.readAllBytes(Paths.get(path));
-        return new String(request);
+        FileInputStream fis = new FileInputStream(path);
+        return new Scanner(fis, "UTF-8").useDelimiter("\\A").next();
     }
 
 }

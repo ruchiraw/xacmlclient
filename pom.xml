@@ -9,7 +9,7 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.6</jdk.version>
         <log4j.version>1.2.17</log4j.version>
         <aetherVersion>0.9.0.M3</aetherVersion>
         <mavenVersion>3.1.0</mavenVersion>
